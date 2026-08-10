@@ -21,12 +21,35 @@ management.
 
 
 
-## Slice setup — `slice_selection.md`
+## Slice setup : `slice_selection.md`
 
 Step-by-step guide for bringing up the simultaneous multi-slice PDU sessions on
 the UE: establishing one PDU session per slice, the QMI/QMAP configuration, and
 the Linux policy-based routing. Read this first as the runtime slice selection assumes these sessions are
 already up.
+
+
+## Slice selection : `PoC_slice_selector/`
+ 
+The proof-of-concept that performs the live latency-based slice selection. It
+uses two scripts that communicate through a shared `active_ifaces.json` file:
+ 
+- `Get_interface_latency.py` : pings each interface continuously to get the latency metrics and writes the active
+  interfaces to `active_ifaces.json`.
+- `Interface_Selector_Latency.py` : reads `active_ifaces.json` and, when the
+  active interface's latency stays above the requirement, updates the default
+  route to a better interface using route metrics (Linux routing).
+
+ 
+Both read their settings (ping target, latency requirement, thresholds) from
+`config.json`. 
+
+Run the latency measurement first, then the selector:
+ 
+```bash
+sudo python3 Get_interface_latency.py
+sudo python3 Interface_Selector_Latency.py
+```
 
 ## Experiments — `slice_switching_experiments/`
 
