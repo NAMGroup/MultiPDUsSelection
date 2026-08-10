@@ -1,6 +1,6 @@
 ## Slice Selection and Switching Mechanism 
 
-A UE-initiated slice selection mechanism was studied and tested on Amarisoft and Ericsson network using a **Linux Host System**  with a **Quectel RM520N-GL** modem.
+A UE-initiated slice selection mechanism was studied and tested on Amarisoft and Ericsson 5G SA Networks using a **Linux Host System**  with a **Quectel RM520N-GL** modem.
 
 
 Modem Firmware: RM520NGLAAR03A03M4G. 
