@@ -1,0 +1,17 @@
+{
+    "TARGET": "150.140.195.220",
+    "PING_COUNT": "10",
+    "PING_TIMEOUT": "2",
+    "PING_INTERVAL": "0.1",
+    "SAMPLE_SLEEP": "1", 
+    "REFRESH": 1, 
+
+
+
+    "APP_TYPE": "latency-critical", 
+    "LATENCY_REQUIREMENT": 28,
+    "VIOLATION_THRESHOLD": 3
+}
+
+
+
