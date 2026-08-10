@@ -12,7 +12,7 @@ management.
 
 ## Repository contents
 
-| File / folder                  | What it is                                              |
+| File                   |                                           |
 |--------------------------------|---------------------------------------------------------|
 | `PoC_slice_selector/Get_interface_latency.py` | Measures per-interface latency |
 | `PoC_slice_selector/Interface_Selector_Latency.py` | Switches the default route based on latency requirements       |
