@@ -33,9 +33,9 @@ already up.
 This folder contains the results of the experiments conducted to evaluate and compare the slice-switching delay of the two implemented switching mechanisms:
 
 Switching-delay measurements comparing the two strategies:
-- **Sequential** — the active PDU session is fully released before a new one is
+- **Sequential** : the active PDU session is fully released before a new one is
   established on another slice, which introduces a visible service interruption.
-- **Multi-PDU** — all sessions stay up and traffic is re-routed between them.
+- **Multi-PDU** : all sessions stay up and traffic is re-routed between them.
 
 Results are split into one subfolder per strategy:
 
@@ -49,7 +49,5 @@ Each holds 10 trials, `TEST1`–`TEST10`, and every trial has two logs:
   numbers during the switch.
 - `switch_events_<STRATEGY>_TEST<N>.log` : timestamped switch events (round
   start/stop markers) recording when the switch was issued and completed.
-
-The two log types together give the two halves of the delay: the switch-events
 log gives the command-level timing, and the ping log gives the actual outage
 seen by the application.
