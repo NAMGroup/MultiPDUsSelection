@@ -1,4 +1,4 @@
-# MultiPDUsSelection — UE-Driven Latency-Aware Slice Selection
+# MultiPDUsSelection — UE Driven Latency Aware Slice Selection
 
 A UE-side system for 5G network slicing that keeps a device's traffic on the
 best-performing slice. Multiple PDU sessions are established simultaneously, one
