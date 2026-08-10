@@ -12,7 +12,7 @@ management.
 
 ## Repository contents
 
-| File                   |                                           |
+| File / Folder                  |                                           |
 |--------------------------------|---------------------------------------------------------|
 | `PoC_slice_selector/Get_interface_latency.py` | Measures per-interface latency |
 | `PoC_slice_selector/Interface_Selector_Latency.py` | Switches the default route based on latency requirements       |
@@ -25,16 +25,17 @@ management.
 
 Step-by-step guide for bringing up the simultaneous multi-slice PDU sessions on
 the UE: establishing one PDU session per slice, the QMI/QMAP configuration, and
-the Linux policy-based routing. Read this first — the runtime engine assumes these sessions are
+the Linux policy-based routing. Read this first as the runtime slice selection assumes these sessions are
 already up.
 
 ## Experiments — `slice_switching_experiments/`
 
-Switching-delay measurements comparing the two strategies:
+This folder contains the results of the experiments conducted to evaluate and compare the slice-switching delay of the two implemented switching mechanisms:
 
+Switching-delay measurements comparing the two strategies:
 - **Sequential** — the active PDU session is fully released before a new one is
-  established on another slice, which exposes a visible service interruption.
-- **Multi-PDU** — all sessions stay up and traffic is re-steered between them.
+  established on another slice, which introduces a visible service interruption.
+- **Multi-PDU** — all sessions stay up and traffic is re-routed between them.
 
 Results are split into one subfolder per strategy:
 
@@ -43,10 +44,10 @@ Results are split into one subfolder per strategy:
 
 Each holds 10 trials, `TEST1`–`TEST10`, and every trial has two logs:
 
-- `ping_<STRATEGY>_TEST<N>.log` — continuous `ping` output for the trial. The
+- `ping_<STRATEGY>_TEST<N>.log` : continuous `ping` output for the trial. The
   service-interruption duration is derived from the gap in ICMP sequence
   numbers during the switch.
-- `switch_events_<STRATEGY>_TEST<N>.log` — timestamped switch events (round
+- `switch_events_<STRATEGY>_TEST<N>.log` : timestamped switch events (round
   start/stop markers) recording when the switch was issued and completed.
 
 The two log types together give the two halves of the delay: the switch-events
