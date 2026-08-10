@@ -49,5 +49,3 @@ Each holds 10 trials, `TEST1`–`TEST10`, and every trial has two logs:
   numbers during the switch.
 - `switch_events_<STRATEGY>_TEST<N>.log` : timestamped switch events (round
   start/stop markers) recording when the switch was issued and completed.
-log gives the command-level timing, and the ping log gives the actual outage
-seen by the application.
