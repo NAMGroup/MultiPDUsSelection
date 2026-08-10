@@ -3,8 +3,8 @@
 A UE-side system for 5G network slicing that keeps a device's traffic on the
 best-performing slice. Multiple PDU sessions are established simultaneously, one
 per slice. Per-slice latency is measured continuously, and the default route is
-updated to whichever interface meets the application's latency needs — without
-tearing down and re-establishing PDU sessions.
+updated to whichever interface meets the application's latency requirements,  without
+releasing and re-establishing PDU sessions.
 
 Tested on a Raspberry Pi 4 with a Quectel RM520N-GL modem on an Amarisoft
 5G SA core, using Linux policy-based routing and QMI/QMAP for multi-PDU session
